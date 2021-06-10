@@ -31,19 +31,22 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
       <View
         style={{
           ...styles.modalView,
-          backgroundColor: switchEnabled ? '#FFFFFF' : '#383838',
+          backgroundColor: switchEnabled ? '#383838' : '#FFFFFF'
         }}>
         <TouchableOpacity
           onPress={() => {
             switchEnabled ? toggleSwitch(false) : toggleSwitch(true);
           }}
           style={styles.actionButton}>
-          <Image source={Mode} />
+          <Image
+            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            source={Mode}
+          />
           <View style={styles.doubleContent}>
             <Text
               style={{
                 ...styles.actionButtonText,
-                color: switchEnabled ? 'black' : 'white',
+                color: switchEnabled ? 'white' : 'black',
               }}>
               Mode
             </Text>
@@ -59,11 +62,14 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
         <TouchableOpacity
           //   onPress={() => toggleModal()}
           style={styles.actionButton}>
-          <Image source={Report} />
+          <Image
+            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            source={Report}
+          />
           <Text
             style={{
               ...styles.actionButtonText,
-              color: switchEnabled ? 'black' : 'white',
+              color: switchEnabled ? 'white' : 'black',
             }}>
             Report
           </Text>
@@ -71,12 +77,15 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
         <TouchableOpacity
           //   onPress={() => toggleModal()}
           style={styles.actionButton}>
-          <Image source={Quality} />
+          <Image
+            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            source={Quality}
+          />
           <View style={styles.doubleContent}>
             <Text
               style={{
                 ...styles.actionButtonText,
-                color: switchEnabled ? 'black' : 'white',
+                color: switchEnabled ? 'white' : 'black',
               }}>
               Quality
             </Text>
@@ -86,11 +95,14 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
         <TouchableOpacity
           //   onPress={() => toggleModal()}
           style={styles.actionButton}>
-          <Image source={PlaybackSpeed} />
+          <Image
+            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            source={PlaybackSpeed}
+          />
           <Text
             style={{
               ...styles.actionButtonText,
-              color: switchEnabled ? 'black' : 'white',
+              color: switchEnabled ? 'white' : 'black',
             }}>
             Playback Speed
           </Text>
