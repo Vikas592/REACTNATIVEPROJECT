@@ -31,7 +31,7 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
       <View
         style={{
           ...styles.modalView,
-          backgroundColor: switchEnabled ? '#383838' : '#FFFFFF'
+          backgroundColor: switchEnabled ? '#383838' : '#FFFFFF',
         }}>
         <TouchableOpacity
           onPress={() => {
@@ -39,7 +39,7 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
           }}
           style={styles.actionButton}>
           <Image
-            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            style={{ tintColor: switchEnabled ? 'white' : 'black' }}
             source={Mode}
           />
           <View style={styles.doubleContent}>
@@ -63,7 +63,7 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
           //   onPress={() => toggleModal()}
           style={styles.actionButton}>
           <Image
-            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            style={{ tintColor: switchEnabled ? 'white' : 'black' }}
             source={Report}
           />
           <Text
@@ -78,7 +78,7 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
           //   onPress={() => toggleModal()}
           style={styles.actionButton}>
           <Image
-            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            style={{ tintColor: switchEnabled ? 'white' : 'black' }}
             source={Quality}
           />
           <View style={styles.doubleContent}>
@@ -96,7 +96,7 @@ function VideoKebabMenu(props: VideoKebabMenuProps) {
           //   onPress={() => toggleModal()}
           style={styles.actionButton}>
           <Image
-            style={{ tintColor: switchEnabled ? 'white' : 'black'}}
+            style={{ tintColor: switchEnabled ? 'white' : 'black' }}
             source={PlaybackSpeed}
           />
           <Text
@@ -138,10 +138,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 12,
     alignItems: 'center',
-  },
-  image: {
-    width: 25,
-    height: 25,
   },
   doubleContent: {
     flex: 1,
