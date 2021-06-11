@@ -11,27 +11,30 @@
 import React, { useState } from 'react';
 import { Button, ScrollView, StyleSheet } from 'react-native';
 import CustomModal from '../components/CustomModal';
+import NotificationPopUp from '../components/NotificationPopUp';
 import VideoKebabMenu from '../components/VideoKebabMenu';
-const image = require('../../assets/Group.png');
+// const image = require('../../assets/Group.png')
+import { icons } from '../../constants';
+import CongratsPopUp from '../components/CongratsPopUp';
 
 const NotSubmittedApp = () => {
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>('light');
-  const [switchEnabled, setSwitchEnabled] = useState<boolean>(false);
+  // const [theme, setTheme] = useState<'dark' | 'light'>('light');
+  // const [switchEnabled, setSwitchEnabled] = useState<boolean>(false);
 
   const toggleModal = () => {
     setVisibleModal(!visibleModal);
   };
-  const toggleSwitch = (value: boolean) => {
-    if (!value) {
-      setTheme('light');
-      setSwitchEnabled(false);
-    }
-    if (value) {
-      setTheme('dark');
-      setSwitchEnabled(true);
-    }
-  };
+  // const toggleSwitch = (value: boolean) => {
+  //   if (!value) {
+  //     setTheme('light');
+  //     setSwitchEnabled(false);
+  //   }
+  //   if (value) {
+  //     setTheme('dark');
+  //     setSwitchEnabled(true);
+  //   }
+  // };
 
   return (
     <ScrollView style={styles.styleNotSubmittedApp}>
@@ -44,11 +47,25 @@ const NotSubmittedApp = () => {
         msg="The question not submitted. Please try again"
         actionCTA="Retry"
       /> */}
-      <VideoKebabMenu
+      {/* <VideoKebabMenu
         modalVisible={visibleModal}
         toggleModal={toggleModal}
         switchEnabled={switchEnabled}
         toggleSwitch={toggleSwitch}
+      /> */}
+
+      {/* <NotificationPopUp
+        open={visibleModal}
+        setOpen={toggleModal}
+        image={icons.READING_ICON}
+        header={'Are you still reading?'}
+      /> */}
+       <CongratsPopUp
+        open={visibleModal}
+        setOpen={toggleModal}
+        image={icons.READING_ICON}
+        header={'Congrats!'}
+        msg={'You have reached to the end of this Study Note!'}
       />
     </ScrollView>
   );
