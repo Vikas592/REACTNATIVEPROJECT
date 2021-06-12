@@ -76,9 +76,18 @@ function NotesKebabMenu(props: NotesKebabMenuProps) {
               Font Size
             </Text>
             <View style={styles.fontSizeIcons}>
-              <Image source={icons.LARGE_A_ICON} />
-              <Image source={icons.MEDIUM_A_ICON} />
-              <Image source={icons.SMALL_A_ICON} />
+              <Image
+                source={icons.LARGE_A_ICON}
+                style={{ tintColor: switchEnabled ? 'white' : 'black' }}
+              />
+              <Image
+                source={icons.MEDIUM_A_ICON}
+                style={{ tintColor: switchEnabled ? 'white' : 'black' }}
+              />
+              <Image
+                source={icons.SMALL_A_ICON}
+                style={{ tintColor: switchEnabled ? 'white' : 'black' }}
+              />
             </View>
           </View>
         </TouchableOpacity>
