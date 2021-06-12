@@ -13,28 +13,30 @@ import { Button, ScrollView, StyleSheet } from 'react-native';
 import CustomModal from '../components/CustomModal';
 import NotificationPopUp from '../components/NotificationPopUp';
 import VideoKebabMenu from '../components/VideoKebabMenu';
+import NotesKebabMenu from '../components/NotesKebabMenu';
+
 // const image = require('../../assets/Group.png')
 import { icons } from '../../constants';
 import CongratsPopUp from '../components/CongratsPopUp';
 
 const NotSubmittedApp = () => {
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
-  // const [theme, setTheme] = useState<'dark' | 'light'>('light');
-  // const [switchEnabled, setSwitchEnabled] = useState<boolean>(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
+  const [switchEnabled, setSwitchEnabled] = useState<boolean>(false);
 
   const toggleModal = () => {
     setVisibleModal(!visibleModal);
   };
-  // const toggleSwitch = (value: boolean) => {
-  //   if (!value) {
-  //     setTheme('light');
-  //     setSwitchEnabled(false);
-  //   }
-  //   if (value) {
-  //     setTheme('dark');
-  //     setSwitchEnabled(true);
-  //   }
-  // };
+  const toggleSwitch = (value: boolean) => {
+    if (!value) {
+      setTheme('light');
+      setSwitchEnabled(false);
+    }
+    if (value) {
+      setTheme('dark');
+      setSwitchEnabled(true);
+    }
+  };
 
   return (
     <ScrollView style={styles.styleNotSubmittedApp}>
@@ -60,12 +62,18 @@ const NotSubmittedApp = () => {
         image={icons.READING_ICON}
         header={'Are you still reading?'}
       /> */}
-       <CongratsPopUp
+       {/* <CongratsPopUp
         open={visibleModal}
         setOpen={toggleModal}
         image={icons.READING_ICON}
         header={'Congrats!'}
         msg={'You have reached to the end of this Study Note!'}
+      /> */}
+       <NotesKebabMenu
+        modalVisible={visibleModal}
+        toggleModal={toggleModal}
+        switchEnabled={switchEnabled}
+        toggleSwitch={toggleSwitch}
       />
     </ScrollView>
   );
